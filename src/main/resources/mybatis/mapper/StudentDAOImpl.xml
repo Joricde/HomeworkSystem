@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.homeworksystem.DAO.StudentDAO">
+
+    <select id="getStudent" resultType="com.homeworksystem.entity.Student">
+        select *
+        from student
+        where student_no = #{student_no}
+    </select>
+
+    <update id="modifyPassword">
+        update student
+        set password=#{password}
+        where student_no=#{student_no}
+    </update>
+
+    <update id="changeName">
+        update student
+        set name=#{name}
+        where student_no=#{student_no}
+    </update>
+</mapper>
